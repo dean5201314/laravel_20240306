@@ -19,10 +19,10 @@
         <div class="container-fluid">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('cats.index') }}">Cats</a>
+                    <a class="nav-link" href="{{route('cats.index')}}">Cats</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('dogs.index') }}">Dogs</a>
+                    <a class="nav-link" href="{{route('dogs.index')}}">Dogs</a>
                 </li>
             </ul>
         </div>
@@ -30,47 +30,10 @@
 
     <div class="container mt-3">
         <h2>Cat List</h2>
-
-        @switch($i)
-            @case(1)
-                First case...
-            @break
-
-            @case(2)
-                Second case...
-            @break
-
-            @default
-                Default case...
-        @endswitch
-        @php
-            switch ($variable) {
-                case 'value':
-                    # code...
-                    break;
-
-                default:
-                    # code...
-                    break;
-            }
-
-        @endphp
-
-        <?php foreach ($variable as $key => $value) :?>
-
-        <?php endforeach; ?>
-
-        @foreach ($users as $user)
-            <p>This is user {{ $user->id }}</p>
-        @endforeach
-
-        @php
-            dd('123456');
-        @endphp
         <p>Lorem ipsum dolor sit amet.</p>
         <div class="text-end">
-            <a href="{{ route('cats.create') }}">Add</a>
-            <a href="{{ route('cats.excel') }}">Excel</a>
+            <a href="{{route('cats.create')}}">Add</a>
+            <a href="{{route('cats.excel')}}">Excel</a>
         </div>
         <table class="table table-striped">
             <thead>
@@ -84,24 +47,24 @@
                 <tr>
                     <td>1</td>
                     <td>Amy</td>
-                    <td>
-                        <a href="{{ route('cats.edit', ['cat' => 1]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
+                    <td>                        
+                        <a href="{{route('cats.edit', ['cat' => 1])}}">Edit123</a> &nbsp;&nbsp;&nbsp;
                         <a href="http://">Del</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>2</td>
-                    <td>bob</td>
+                    <td>1</td>
+                    <td>Amy</td>
                     <td>
-                        <a href="{{ route('cats.edit', ['cat' => 2]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
+                        <a href="http://">Edit</a> &nbsp;&nbsp;&nbsp;
                         <a href="http://">Del</a>
                     </td>
                 </tr>
                 <tr>
-                    <td>3</td>
-                    <td>cat</td>
+                    <td>1</td>
+                    <td>Amy</td>
                     <td>
-                        <a href="{{ route('cats.edit', ['cat' => 3]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
+                        <a href="http://">Edit</a> &nbsp;&nbsp;&nbsp;
                         <a href="http://">Del</a>
                     </td>
                 </tr>
