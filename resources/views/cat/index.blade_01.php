@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <h1>Hello CSS</h1>
+    {{-- <h1>Hello CSS</h1> --}}
 
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
@@ -33,10 +33,6 @@
     <div class="container mt-3">
         <h2>Cat List</h2>
         <p>Lorem ipsum dolor sit amet.</p>
-        <div class="text-end">
-            <a href="{{route('cats.create')}}">Add</a>
-            <a href="{{route('cats.excel')}}">Excel</a>
-        </div>
         <table class="table table-striped">
             <thead>
                 <tr>

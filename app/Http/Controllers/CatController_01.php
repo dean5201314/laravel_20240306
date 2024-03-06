@@ -11,7 +11,12 @@ class CatController extends Controller
      */
     public function index()
     {
-      
+        //
+        // $url=asset("css/style.css");
+        // dd($url);
+        // $data=view('cat.index');
+        // $data=redirect('/home');
+        // dd($data);
         return view('cat.index');
     }
 
@@ -20,11 +25,7 @@ class CatController extends Controller
      */
     public function create()
     {
-        // dd('hello cat create action');
-        // $url = route('cats.store');
-        // dd($url);
-
-        return view('cat.create');
+        //
     }
 
     /**
@@ -49,6 +50,7 @@ class CatController extends Controller
     public function edit(string $id)
     {
         //
+        return view('cat.edit');
     }
 
     /**
@@ -66,9 +68,9 @@ class CatController extends Controller
     {
         //
     }
-
     public function excel()
     {
-        dd('hello cats excel');
+        dd("cat print excel");
+        // return view('cat.excel');
     }
 }
