@@ -1,0 +1,25 @@
+
+composer create-project laravel/laravel exampleapp
+composer create-project laravel/laravel test0305
+
+cd example-app
+php artisan serve
+cd test0305
+php artisan serve
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+php artisan make:controller UserController
+php artisan make:controller CatController
+php artisan make:controller DogController
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+
+
+php artisan make:controller PhotoController --resource
+php artisan make:controller DogController --resource
+php artisan make:controller CatController --resource
+
+
+use App\Http\Controllers\PhotoController;
+Route::resource('photos', PhotoController::class);
+use App\Http\Controllers\PigController;
+Route::resource('pigs', PigController::class);
