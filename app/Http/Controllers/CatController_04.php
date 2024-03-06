@@ -12,8 +12,8 @@ class CatController extends Controller
     public function index()
     {
         // $url = route('cats.edit', ['id' => 1]); 
-        // $url = route('cats.edit', ['cat' => 1]);
-        // dd($url);
+        $url = route('cats.edit', ['cat' => 1]);
+        dd($url);
 
 
         return view('cat.index');

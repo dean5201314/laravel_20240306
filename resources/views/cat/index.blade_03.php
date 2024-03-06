@@ -47,8 +47,16 @@
                 <tr>
                     <td>1</td>
                     <td>Amy</td>
-                    <td>                        
-                        <a href="{{route('cats.edit', ['cat' => 1])}}">Edit123</a> &nbsp;&nbsp;&nbsp;
+                    <td>
+                        <a href="http://">Edit</a> &nbsp;&nbsp;&nbsp;
+                        <a href="http://">Del</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1</td>
+                    <td>Amy</td>
+                    <td>
+                        <a href="http://">Edit</a> &nbsp;&nbsp;&nbsp;
                         <a href="http://">Del</a>
                     </td>
                 </tr>
