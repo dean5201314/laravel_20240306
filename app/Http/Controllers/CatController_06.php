@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\DB;
 
 class CatController extends Controller
 {
@@ -12,25 +11,7 @@ class CatController extends Controller
      */
     public function index()
     {
-        $data['cats'] = DB::select('SELECT * FROM cats');
-        $data['dogs'] = DB::select('SELECT * FROM dogs');
-        $data['test'] = '123';
-        // dd($data);
-        return view('cat.index', ['data' => $data]);
-        // return view('cat.index', ['data' => $data, 'test' => $test]);
-
-
-
-        // DB::table('cats')->insert([
-        //     'name' => 'kai',
-        //     'address' => 999
-        // ]);
-
-
-
-        // return view('user.index', ['users' => $users]);
-
-
+       
         // $url = route('cats.edit', ['id' => 1]); 
         // $url = route('cats.edit', ['cat' => 1]);
         // dd($url);
@@ -97,4 +78,6 @@ class CatController extends Controller
     {
         dd('hello cats excel');
     }
+
+    
 }

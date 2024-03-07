@@ -28,16 +28,45 @@
         </div>
     </nav>
 
-    @php
-        // dd($test);
-        // dd($data);
-        $test = $data['test'];
-
-    @endphp
-
-    
     <div class="container mt-3">
         <h2>Cat List</h2>
+
+        @switch($i)
+            @case(1)
+                First case...
+            @break
+
+            @case(2)
+                Second case...
+            @break
+
+            @default
+                Default case...
+        @endswitch
+        @php
+            switch ($variable) {
+                case 'value':
+                    # code...
+                    break;
+
+                default:
+                    # code...
+                    break;
+            }
+
+        @endphp
+
+        <?php foreach ($variable as $key => $value) :?>
+
+        <?php endforeach; ?>
+
+        @foreach ($users as $user)
+            <p>This is user {{ $user->id }}</p>
+        @endforeach
+
+        @php
+            dd('123456');
+        @endphp
         <p>Lorem ipsum dolor sit amet.</p>
         <div class="text-end">
             <a href="{{ route('cats.create') }}">Add</a>
