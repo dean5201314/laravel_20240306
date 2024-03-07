@@ -31,11 +31,11 @@
     @php
         // dd($test);
         // dd($data);
-        // $test = $data['test'];
+        $test = $data['test'];
 
     @endphp
 
-
+    
     <div class="container mt-3">
         <h2>Cat List</h2>
         <p>Lorem ipsum dolor sit amet.</p>
@@ -52,21 +52,30 @@
                 </tr>
             </thead>
             <tbody>
-                @foreach ($data as $item)
-                    <tr>
-                        <td>
-                            {{ $item->id }}
-                        </td>
-                        <td>
-                            {{ $item->name }}
-                        </td>
-                        <td>
-                            <a href="{{ route('cats.edit', ['cat' => $item->id ]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
-                            <a href="http://">Del</a>
-                        </td>
-                    </tr>
-                @endforeach
-
+                <tr>
+                    <td>1</td>
+                    <td>Amy</td>
+                    <td>
+                        <a href="{{ route('cats.edit', ['cat' => 1]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
+                        <a href="http://">Del</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>bob</td>
+                    <td>
+                        <a href="{{ route('cats.edit', ['cat' => 2]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
+                        <a href="http://">Del</a>
+                    </td>
+                </tr>
+                <tr>
+                    <td>3</td>
+                    <td>cat</td>
+                    <td>
+                        <a href="{{ route('cats.edit', ['cat' => 3]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
+                        <a href="http://">Del</a>
+                    </td>
+                </tr>
             </tbody>
         </table>
     </div>

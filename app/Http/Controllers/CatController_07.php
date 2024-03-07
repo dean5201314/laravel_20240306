@@ -12,12 +12,10 @@ class CatController extends Controller
      */
     public function index()
     {
-        // $data['cats'] = DB::select('SELECT * FROM cats');
-        $data = DB::select('SELECT * FROM cats');
-        
-        // $data['dogs'] = DB::select('SELECT * FROM dogs');
-        // $data['test'] = '123';
-        // dd(gettype($data[0]));
+        $data['cats'] = DB::select('SELECT * FROM cats');
+        $data['dogs'] = DB::select('SELECT * FROM dogs');
+        $data['test'] = '123';
+        // dd($data);
         return view('cat.index', ['data' => $data]);
         // return view('cat.index', ['data' => $data, 'test' => $test]);
 
@@ -59,12 +57,6 @@ class CatController extends Controller
         $input = $request->except('_token');
         // die();
         // dd($input);
-
-        DB::table('cats')->insert([
-            'name' => $input['name'],
-            'mobile' => $input['mobile'],
-            'address' => 999
-        ]);
         // dd('hello cat store');
         return redirect()->route('cats.index');
     }
