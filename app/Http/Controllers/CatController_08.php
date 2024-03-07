@@ -59,15 +59,11 @@ class CatController extends Controller
         $input = $request->except('_token');
         // die();
         // dd($input);
-        $now = now();
-        // dd($now);
 
         DB::table('cats')->insert([
             'name' => $input['name'],
             'mobile' => $input['mobile'],
-            'address' => 999,
-            'created_at' => $now,
-            'updated_at' => $now,
+            'address' => 999
         ]);
         // dd('hello cat store');
         return redirect()->route('cats.index');
