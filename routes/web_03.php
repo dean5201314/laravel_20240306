@@ -20,7 +20,7 @@ use App\Http\Controllers\MobileController;
 Route::get('/', function () {
     // return view('welcome');
    
-    return redirect('/students');
+    return redirect('/cats');
 });
 
 // cats 小貓

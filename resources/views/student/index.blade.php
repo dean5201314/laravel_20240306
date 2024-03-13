@@ -34,7 +34,7 @@
         // $test = $data['test'];
 
     @endphp
-
+    
 
     <div class="container mt-3">
         <h2>Student List</h2>

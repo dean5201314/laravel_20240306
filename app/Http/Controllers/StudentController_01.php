@@ -3,7 +3,6 @@
 namespace App\Http\Controllers;
 
 use App\Models\Student;
-use App\Models\Mobile;
 use Illuminate\Http\Request;
 
 
@@ -24,7 +23,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        return view('student.create');
+        //
     }
 
     /**
@@ -32,22 +31,7 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request);
-        $input = $request->except('_token');
-
-        // 學生
-        $data = new Student;
-        $data->name = $input['name'];
-        $data->save();
-
-        // 手機
-        $id = $data->id;
-        $item = new Mobile;
-        $item->student_id = $id;
-        $item->mobile = $input['mobile'];
-        $item->save();
-
-         return redirect()->route('students.index');
+        //
     }
 
     /**
