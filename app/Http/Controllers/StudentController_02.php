@@ -15,9 +15,7 @@ class StudentController extends Controller
     public function index()
     {
 
-        // $data = Student::get();
-        $data = Student::with('mobileRelation')->get();
-        // dd($data);
+        $data = Student::get();
         return view('student.index', ['data' => $data]);
     }
 
@@ -49,7 +47,7 @@ class StudentController extends Controller
         $item->mobile = $input['mobile'];
         $item->save();
 
-        return redirect()->route('students.index');
+         return redirect()->route('students.index');
     }
 
     /**
@@ -65,13 +63,7 @@ class StudentController extends Controller
      */
     public function edit(Student $student)
     {
-        // dd("Hello students - $student Edit");
-        $id = $student->id;
-        $data = Student::where('id', $id)->with('mobileRelation')->first();
-        dd($data);
-        // $data = $student;
-        // dd($data);
-        return view('student.edit', ['data' => $data]);
+        //
     }
 
     /**

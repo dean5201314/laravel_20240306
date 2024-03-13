@@ -13,7 +13,7 @@ class Student extends Model
 
     protected $table = 'students';
 
-    public function mobileRelation(): HasOne
+    public function mobile(): HasOne
     {
         return $this->hasOne(Mobile::class);
     }

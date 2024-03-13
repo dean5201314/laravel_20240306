@@ -19,9 +19,6 @@
         <div class="container-fluid">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="{{ route('students.index') }}">Students</a>
-                </li>
-                <li class="nav-item">
                     <a class="nav-link" href="{{ route('cats.index') }}">Cats</a>
                 </li>
                 <li class="nav-item">
@@ -35,8 +32,9 @@
         // dd($test);
         // dd($data);
         // $test = $data['test'];
-    @endphp
 
+    @endphp
+    
 
     <div class="container mt-3">
         <h2>Student List</h2>
@@ -64,18 +62,13 @@
                             {{ $item->name }}
                         </td>
                         <td>
-                            {{ $item->mobileRelation->student_id }}
+                            {{ $item->mobile->student_id }}
                         </td>
                         <td>
-                            {{ $item->mobileRelation->mobile }}
+                            {{ $item->mobile->mobile }}
                         </td>
                         <td>
-                             {{-- {{ route('students.edit', ['student' => $item->id ]) }} --}}
-
-                            {{-- <a href="http://localhost/students/{{$item->id}}/edit ">self-edit</a> --}}
-                            {{-- <a href="{{ route('students.edit') }}">edit</a> --}}
                             <a href="{{ route('students.edit', ['student' => $item->id ]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
-                            {{-- <a href="{{ route('students.edit', ['student' => $item->id ]) }}">Edit</a> &nbsp;&nbsp;&nbsp; --}}
                             <a href="http://">Del</a>
                         </td>
                     </tr>
