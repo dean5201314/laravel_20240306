@@ -18,25 +18,9 @@ class StudentController extends Controller
         $data = Student::get();
 
 
-        $data = Student::with('mobileRelation')->with('loveRelations')->get();
-        foreach ($data as $key => $value) {
-            // $data[0]
-            //loveRelations 1
-            //fetchAll
-            //foreach
-            echo ("$value->name<br>");
-            // $data[1]
-            //loveRelations 3
-            //fetchAll
-            //foreach
-            
-            foreach ($value->loveRelations as $key2 => $value2) {
-                echo ("&nbsp;&nbsp;&nbsp;&nbsp;$value2->love <br>");
-            }
-        }
-
-        // dd($data[1]->loveRelations);
-        // return view('student.index', ['data' => $data]);
+        $data = Student::with('mobileRelation')->get();
+        // dd($data);
+        return view('student.index', ['data' => $data]);
     }
 
     /**
@@ -111,11 +95,11 @@ class StudentController extends Controller
         // 子表刪除 再新增        
         Mobile::where('student_id', $id)->delete();
 
-        // 手機
-        $item = new Mobile;
-        $item->student_id = $id;
-        $item->mobile = $input['mobile'];
-        $item->save();
+         // 手機
+         $item = new Mobile;
+         $item->student_id = $id;
+         $item->mobile = $input['mobile'];
+         $item->save();
 
         // 方法一
         // $data = Mobile::where('student_id', $id)->first();
@@ -132,16 +116,11 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-        // delete mobiles
-        Mobile::where('student_id', $student->id)->delete();
-
         // delete students
         Student::where('id', $student->id)->delete();
-
-
-
-
-
+        
+        // delete mobiles
+        Mobile::where('student_id', $student->id)->delete();
 
         return redirect()->route('students.index');
     }

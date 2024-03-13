@@ -15,12 +15,11 @@
 </head>
 
 <body>
+    <h1>Hello CSS</h1>
+
     <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
         <div class="container-fluid">
             <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link" href="{{ route('students.index') }}">Students</a>
-                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('cats.index') }}">Cats</a>
                 </li>
@@ -42,7 +41,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" name="name" id="" class="form-control" required>
+                    <input type="text" name="name" id="" class="form-control">
                 </div>
             </div>
             <div class="row">
@@ -50,7 +49,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" name="mobile" id="" class="form-control" required>
+                    <input type="text" name="mobile" id="" class="form-control">
                 </div>
             </div>
             <div class="row mt-3">

@@ -13,13 +13,9 @@ return new class extends Migration
     {
         Schema::create('mobiles', function (Blueprint $table) {
             $table->id();
-            // $table->integer('student_id');
-            $table->string('mobile')->nullable();
+            $table->integer('student_id');
+            $table->string('mobile');
             $table->timestamps();
-            // $table->foreign('student_id')->references('id')->on('students');
-
-            $table->unsignedBigInteger('student_id');
-            $table->foreign('student_id')->references('id')->on('students');
         });
     }
 
