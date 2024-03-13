@@ -81,20 +81,8 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        // $input = $request->all();
-        $input = $request->except('_token', '_method');
-
-        // update students
-        $id = $student->id;
-        $data = Student::where('id', $id)->first();
-        $data->name = $input['name'];
-        $data->save();
-
-        // update mobiles
-
-        return redirect()->route('students.index');
-
-        // dd($input);
+        $input = $request->all();
+        dd($input);
     }
 
     /**
