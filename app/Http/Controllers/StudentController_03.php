@@ -15,9 +15,7 @@ class StudentController extends Controller
     public function index()
     {
 
-        $data = Student::get();
-
-
+        // $data = Student::get();
         $data = Student::with('mobileRelation')->get();
         // dd($data);
         return view('student.index', ['data' => $data]);
@@ -70,7 +68,7 @@ class StudentController extends Controller
         // dd("Hello students - $student Edit");
         $id = $student->id;
         $data = Student::where('id', $id)->with('mobileRelation')->first();
-        // dd($data);
+        dd($data);
         // $data = $student;
         // dd($data);
         return view('student.edit', ['data' => $data]);
@@ -81,8 +79,7 @@ class StudentController extends Controller
      */
     public function update(Request $request, Student $student)
     {
-        $input = $request->all();
-        dd($input);
+        //
     }
 
     /**

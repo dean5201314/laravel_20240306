@@ -30,8 +30,7 @@
         </div>
     </nav>
 
-    <form action="{{ route('students.update', ['student' => 1]) }}" method="post">
-        @method('PUT')
+    <form action="{{ route('students.store') }}" method="post">
         @csrf
         {{-- <form action="http://localhost/cats" method="post"> --}}
         <div class="container mt-3">
@@ -50,7 +49,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" name="mobile" id="" class="form-control" value="{{$data->mobileRelation->mobile}}">
+                    <input type="text" name="mobile" id="" class="form-control" value="{{$data}}">
                 </div>
             </div>
             <div class="row mt-3">
