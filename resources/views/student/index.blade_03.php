@@ -70,21 +70,13 @@
                             {{ $item->mobileRelation->mobile }}
                         </td>
                         <td>
-                            {{-- {{ route('students.edit', ['student' => $item->id ]) }} --}}
+                             {{-- {{ route('students.edit', ['student' => $item->id ]) }} --}}
 
                             {{-- <a href="http://localhost/students/{{$item->id}}/edit ">self-edit</a> --}}
                             {{-- <a href="{{ route('students.edit') }}">edit</a> --}}
+                            <a href="{{ route('students.edit', ['student' => $item->id ]) }}">Edit</a> &nbsp;&nbsp;&nbsp;
                             {{-- <a href="{{ route('students.edit', ['student' => $item->id ]) }}">Edit</a> &nbsp;&nbsp;&nbsp; --}}
-                            
-                            <form action="{{ route('students.destroy', ['student' => $item->id]) }}" method="post">
-                                @csrf
-                                @method('DELETE')
-                                <a class="btn btn-warning" href="{{ route('students.edit', ['student' => $item->id]) }}">Edit</a>
-                                &nbsp;&nbsp;&nbsp;    
-                                {{-- <a href="{{ route('students.destroy', ['student' => $item->id ]) }}">Del</a> --}}
-                                <button type="submit" class="btn btn-danger">del</button>
-                            </form>
-
+                            <a href="http://">Del</a>
                         </td>
                     </tr>
                 @endforeach
