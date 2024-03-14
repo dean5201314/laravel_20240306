@@ -49,8 +49,8 @@
                 <tr>
                     <th>id</th>
                     <th>name</th>
-                    <th>mobile</th>
-                    <th>love</th>
+                    <th>mobile_student_id</th>
+                    <th>mobile_mobile</th>
                     <th>operate</th>
                 </tr>
             </thead>
@@ -64,19 +64,10 @@
                             {{ $item->name }}
                         </td>
                         <td>
-                            {{ $item->mobileRelation->mobile ?? '' }}
+                            {{ $item->mobileRelation->id ?? '' }}
                         </td>
                         <td>
-                            @php
-                                // foreach ($item->loveRelations as $key => $value) {
-                                //     echo "$value->love<br>";
-                                // }
-                            @endphp
-
-                            @foreach ($item->loveRelations as $value)
-                                {{"$value->love"}}
-                                <br>
-                            @endforeach
+                            {{ $item->mobileRelation->mobile ?? '' }}
                         </td>
                         <td>
                             {{-- {{ route('students.edit', ['student' => $item->id ]) }} --}}
