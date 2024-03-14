@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Student;
 use App\Models\Mobile;
-use App\Models\Love;
 use Illuminate\Http\Request;
 
 
@@ -30,7 +29,7 @@ class StudentController extends Controller
         //     //loveRelations 3
         //     //fetchAll
         //     //foreach
-
+            
         //     foreach ($value->loveRelations as $key2 => $value2) {
         //         echo ("&nbsp;&nbsp;&nbsp;&nbsp;$value2->love <br>");
         //     }
@@ -55,32 +54,18 @@ class StudentController extends Controller
     {
         // dd($request);
         $input = $request->except('_token');
-        $loves = $input['loves'];
-        $loveArr = explode(",", $loves);
-        // dd($loveArr);
 
-        // student
+        // 學生
         $data = new Student;
         $data->name = $input['name'];
         $data->save();
 
-        // mobile
+        // 手機
         $id = $data->id;
         $item = new Mobile;
         $item->student_id = $id;
         $item->mobile = $input['mobile'];
         $item->save();
-
-        // loves
-        $id = $data->id;
-        foreach ($loveArr as $key => $value) {
-            $itemLove = new Love;
-            $itemLove->student_id = $id;
-            $itemLove->love = $value;
-            $itemLove->save();
-        }
-
-        
 
         return redirect()->route('students.index');
     }

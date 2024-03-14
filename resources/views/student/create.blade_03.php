@@ -42,7 +42,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" name="name" id="name" class="form-control" required>
+                    <input type="text" name="name" id="" class="form-control" required>
                 </div>
             </div>
             <div class="row">
@@ -50,15 +50,7 @@
             </div>
             <div class="row">
                 <div class="col">
-                    <input type="text" name="mobile" id="mobile" class="form-control" required>
-                </div>
-            </div>
-            <div class="row">
-                <div class="col ">love &nbsp;&nbsp;&nbsp;&nbsp;ex:&nbsp;php,laravel,js</div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="text" name="loves" id="loves" class="form-control" required>
+                    <input type="text" name="mobile" id="" class="form-control" required>
                 </div>
             </div>
             <div class="row mt-3">
