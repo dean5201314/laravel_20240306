@@ -54,14 +54,6 @@
                     <input type="text" name="mobile" id="" class="form-control" value="{{$data->mobileRelation->mobile}}">
                 </div>
             </div>
-            <div class="row">
-                <div class="col ">loves</div>
-            </div>
-            <div class="row">
-                <div class="col">
-                    <input type="text" name="loves" id="loves" class="form-control" value="{{$data->loves}}">
-                </div>
-            </div>
             <div class="row mt-3">
                 <div class="col">
                     <div class="d-grid gap-2">

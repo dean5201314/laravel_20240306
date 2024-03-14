@@ -80,7 +80,7 @@ class StudentController extends Controller
             $itemLove->save();
         }
 
-
+        
 
         return redirect()->route('students.index');
     }
@@ -100,24 +100,10 @@ class StudentController extends Controller
     {
         // dd("Hello students - $student Edit");
         $id = $student->id;
-        $data = Student::where('id', $id)->with('mobileRelation')->with('loveRelations')->first();
-        // $data['loves'] = 'php,laravel,js';
-        
-        //relation to arry
-        $loveArr = [];
-        foreach ($data->loveRelations as $key => $value) {
-            array_push($loveArr, $value->love);
-        }
-        // dd($loveArr);
-
-        // array to string
-        $loves = implode(",", $loveArr);
-        // dd($loves);
-
-        // data['loves']
-        $data['loves'] = $loves;
+        $data = Student::where('id', $id)->with('mobileRelation')->first();
         // dd($data);
-
+        // $data = $student;
+        // dd($data);
         return view('student.edit', ['data' => $data]);
     }
 
@@ -161,10 +147,6 @@ class StudentController extends Controller
      */
     public function destroy(Student $student)
     {
-
-        // delete loves
-        Love::where('student_id', $student->id)->delete();
-
         // delete mobiles
         Mobile::where('student_id', $student->id)->delete();
 
