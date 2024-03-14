@@ -102,7 +102,7 @@ class StudentController extends Controller
         $id = $student->id;
         $data = Student::where('id', $id)->with('mobileRelation')->with('loveRelations')->first();
         // $data['loves'] = 'php,laravel,js';
-
+        
         //relation to arry
         $loveArr = [];
         foreach ($data->loveRelations as $key => $value) {
@@ -128,10 +128,6 @@ class StudentController extends Controller
     {
         // $input = $request->all();
         $input = $request->except('_token', '_method');
-        $loves = $input['loves'];
-        $loveArr = explode(",", $loves);
-        // dd($input);
-        // dd($loveArr);
 
         // update students
         $id = $student->id;
@@ -149,18 +145,6 @@ class StudentController extends Controller
         $item->student_id = $id;
         $item->mobile = $input['mobile'];
         $item->save();
-
-        // loves
-        // delete loves
-        Love::where('student_id', $student->id)->delete();
-
-        // add love
-        foreach ($loveArr as $key => $value) {
-            $itemLove = new Love;
-            $itemLove->student_id = $id;
-            $itemLove->love = $value;
-            $itemLove->save();
-        }
 
         // 方法一
         // $data = Mobile::where('student_id', $id)->first();
